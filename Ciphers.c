@@ -4,42 +4,54 @@
 
 int main(void)
 {
-    //Ceaser Cipher Encryption
-    char str[1000] = "abcde"; //Inital String
-    char estr[1000]; //Initalises Encrypted String
+    
+    
+
+    char ccstr[100] = "THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG"; //Inital String
+    char ccestr[100]; //Initalises Encrypted String
+    char ccunstr[100];
     int key = 3; //Key for cipher
-    int strsize = strlen(str);
+    int strsize = strlen(ccstr);
     
-    for(int i = 0; str[i] != '\0'; ++i){ //Runs through string until it reaches null character '\0'      
-        if (str[i] == 32)
+//---------------------------------------------------------------------------------------------------------------------------    
+//Ceaser Cipher Encryption
+    
+    for(int i = 0; (i < strsize); i++){ //Runs through string until it reaches null character '\0'      
+        if (ccstr[i] == ' ')
         {
-            str[i] = 32;
+            ccestr[i] = ' ';
         }
         else
         {
-            estr[i] = ((((str[i] + key) - 97) % 26) + 97); // Takes string and uses key and mod to place into new string.
+            ccestr[i] = ((((ccstr[i] + key) - 65) % 26) + 65); // Takes string and uses key and mod to place into new string.
         }
-
-
+ 
 }
-    printf("%s\n", estr);
-    //Ceaser Cipher Decryption
-    for(int i = 0; i < (strsize - key); i++){ //Runs through string until it reaches null character '\0'      
-        if (str[i] == ' ')
+    printf("%s\n", ccestr);
+
+//--------------------------------------------------------------------------------------------------------------------------------    
+//Ceaser Cipher Decryption
+    
+    for(int i = 0; i < (strsize); ++i){ //Runs through string until it reaches end of string     
+        if (ccestr[i] == ' ')
         {
-            str[i] = ' ';
+            ccunstr[i] = ' ';
         }
         else
         {
-        str[i] = ((((estr[i] - key) - 97) % 26) + 97); // Takes string and uses key and mod to place into new string.
-        printf("%s\n", str);
+            ccunstr[i] = ((((ccestr[i] - key + 26) - 65) % 26) + 65); // Takes string and uses key and mod to place into new string.
         }  
-
-}
-printf("%s\n", str); 
     
-  
+}
+    printf("%s\n", ccunstr); 
+//--------------------------------------------------------------------------------------------------------------------------------    
+//Substitution Cipher Encryption
 
+
+
+
+
+//-------------------------------------------------------------------------------------------------------------------------------- 
 }
 
 
