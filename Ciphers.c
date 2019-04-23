@@ -8,22 +8,23 @@ int main(void)
     
 
     char ccstr[100] = "THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG"; //Inital String
-    char ccestr[100]; //Initalises Encrypted String
-    char ccunstr[100];
+    char ccestr[100]; //Initalises Caesar Cipher Encrypted String
+    char ccunstr[100]; //Initalises Caesar Cipher Decrypted String
     int key = 3; //Key for cipher
-    int strsize = strlen(ccstr);
+    int strsize = strlen(ccstr); // Creates a varible strsize from Caesar Cipher Encrypted String
     
 //---------------------------------------------------------------------------------------------------------------------------    
 //Ceaser Cipher Encryption
     
-    for(int i = 0; (i < strsize); i++){ //Runs through string until it reaches null character '\0'      
-        if (ccstr[i] == ' ')
+    for(int i = 0; (i < strsize); i++) //Runs through string until it reaches null character '\0' 
+        {      
+        if (ccstr[i] == ' ') // Checks if character is a space
         {
-            ccestr[i] = ' ';
+            ccestr[i] = ' '; // If true makes a space. 
         }
         else
         {
-            ccestr[i] = ((((ccstr[i] + key) - 65) % 26) + 65); // Takes string and uses key and mod to place into new string.
+            ccestr[i] = ((((ccstr[i] + key) - 65) % 26) + 65); // Takes string and uses key and mod to place into Caesar Cipher Encrypted String.
         }
  
 }
@@ -33,21 +34,32 @@ int main(void)
 //Ceaser Cipher Decryption
     
     for(int i = 0; i < (strsize); ++i){ //Runs through string until it reaches end of string     
-        if (ccestr[i] == ' ')
+        if (ccestr[i] == ' ') // Checks if character is a space
         {
-            ccunstr[i] = ' ';
+            ccunstr[i] = ' '; // If true makes a space. 
         }
         else
         {
-            ccunstr[i] = ((((ccestr[i] - key + 26) - 65) % 26) + 65); // Takes string and uses key and mod to place into new string.
+            ccunstr[i] = ((((ccestr[i] - key + 26) - 65) % 26) + 65); // Takes string takes away key and adds 26 to return to values. Then uses mod to place int0 Caesar Cipher Decrypted String.
         }  
     
 }
     printf("%s\n", ccunstr); 
 //--------------------------------------------------------------------------------------------------------------------------------    
 //Substitution Cipher Encryption
-
-
+    
+    char alphabetstr[100] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    char sckeystr[100] = "QWERTYUIOPASDFGHJKLZXCVBNM"; //Initalises Substitution Cipher
+    char scstr[100] = "THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG"; //Inital String
+    char scestr[100];
+    
+    for(int i = 0; i != '\0'; i++)
+    {
+        
+    }
+    
+    printf("%s", scestr);
+    
 
 
 
