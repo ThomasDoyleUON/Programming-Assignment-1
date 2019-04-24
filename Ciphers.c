@@ -33,7 +33,8 @@ int main(void)
 //--------------------------------------------------------------------------------------------------------------------------------    
 //Ceaser Cipher Decryption
     
-    for(int i = 0; i < (strsize); ++i){ //Runs through string until it reaches end of string     
+    for(int i = 0; i < (strsize); ++i)
+        { //Runs through string until it reaches end of string     
         if (ccestr[i] == ' ') // Checks if character is a space
         {
             ccunstr[i] = ' '; // If true makes a space. 
@@ -48,22 +49,36 @@ int main(void)
 //--------------------------------------------------------------------------------------------------------------------------------    
 //Substitution Cipher Encryption
     
-    char alphabetstr[100] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    char sckeystr[100] = "QWERTYUIOPASDFGHJKLZXCVBNM"; //Initalises Substitution Cipher
-    char scstr[100] = "THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG"; //Inital String
-    char scestr[100];
+//char alphabetstr[100] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    char esckeystr[100] =  "QWERTYUIOPASDFGHJKLZXCVBNM"; //Initalises Substitution Cipher
+    char escstr[100] = "THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG"; //Inital String
+    char escestr[100];
+    int alphatemp;
+    int escstrsize = strlen(escstr);
     
-    for(int i = 0; i != '\0'; i++)
-    {
+   
+    for(int x = 0; x < (escstrsize); x++)
+    { 
+    if (escstr[x] == ' ') // Checks if character is a space
+        {
+            escestr[x] = ' '; // If true makes a space. 
+        }
+        else
+        {
+            alphatemp = escstr[x] - 65;
+            escestr[x] = esckeystr[alphatemp];
+        } 
         
     }
     
-    printf("%s", scestr);
+    printf("%s", escestr);
     
-
-
-
 //-------------------------------------------------------------------------------------------------------------------------------- 
+//Substitution Cipher Decryption
+
+
+
+
 }
 
 
