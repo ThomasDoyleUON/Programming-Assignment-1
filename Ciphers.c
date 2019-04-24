@@ -50,11 +50,11 @@ int main(void)
 //Substitution Cipher Encryption
     
 //char alphabetstr[100] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    char esckeystr[100] =  "QWERTYUIOPASDFGHJKLZXCVBNM"; //Initalises Substitution Cipher
+    char esckeystr[100] = "QWERTYUIOPASDFGHJKLZXCVBNM"; //Initalises Substitution Cipher
     char escstr[100] = "THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG"; //Inital String
-    char escestr[100];
-    int alphatemp;
-    int escstrsize = strlen(escstr);
+    char escestr[100]; //Initalises Substitution Cipher Encrypted String 
+    int alphatemp; // Initalises temp alpha interger.
+    int escstrsize = strlen(escstr); // Gets string size of inital string.
     
    
     for(int x = 0; x < (escstrsize); x++)
@@ -65,20 +65,46 @@ int main(void)
         }
         else
         {
-            alphatemp = escstr[x] - 65;
-            escestr[x] = esckeystr[alphatemp];
+            alphatemp = escstr[x] - 65; //Turns number to index of 0
+            escestr[x] = esckeystr[alphatemp]; //Takes alphatemp number and subsitutes with esckeystr
         } 
         
     }
     
-    printf("%s", escestr);
+    printf("%s\n", escestr);
     
 //-------------------------------------------------------------------------------------------------------------------------------- 
 //Substitution Cipher Decryption
 
+    char alphabetstr[100] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    char dsckeystr[100] =   "QWERTYUIOPASDFGHJKLZXCVBNM"; //Initalises Substitution Cipher
+    char dscstr[100] = "ZIT JXOEA WKGVF YGB PXDHTR GCTK ZIT SQMN RGU"; //Inital String
+    char dscestr[100];
+    int dscstrsize = strlen(dscstr);
+    int positiontemp;
+    char *dscstrtemp;
+
+    
+    for(int x = 0; x < (dscstrsize); x++)
+    {
+    if (dscstr[x] == ' ') // Checks if character is a space
+        {
+            dscestr[x] = ' '; // If true makes a space. 
+        }
+        else
+        {
+         
+          dscstrtemp = dscstr[x];
+          positiontemp = strcspn (dscstrtemp, dsckeystr);
+          printf("%d\n",positiontemp);
+         
+        }
+    }
+
+printf("%s\n", dscestr);
 
 
-
+//--------------------------------------------------------------------------------------------------------------------------------
 }
 
 
