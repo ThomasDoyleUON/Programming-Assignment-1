@@ -26,8 +26,7 @@ int main(void)
         {
             ccestr[i] = ((((ccstr[i] + key) - 65) % 26) + 65); // Takes string and uses key and mod to place into Caesar Cipher Encrypted String.
         }
- 
-}
+        }
     printf("%s\n", ccestr);
 
 //--------------------------------------------------------------------------------------------------------------------------------    
@@ -82,22 +81,35 @@ int main(void)
     char dscestr[100];
     int dscstrsize = strlen(dscstr);
     int positiontemp;
-    char *dscstrtemp;
+    char dscstrtemp;
+    int dalphatemp = 0;
+    
+ 
 
     
     for(int x = 0; x < (dscstrsize); x++)
     {
     if (dscstr[x] == ' ') // Checks if character is a space
         {
-            dscestr[x] = ' '; // If true makes a space. 
+        dscestr[x] = ' '; // If true makes a space. 
         }
         else
         {
-         
-          dscstrtemp = dscstr[x];
-          positiontemp = strcspn (dscstrtemp, dsckeystr);
-          printf("%d\n",positiontemp);
-         
+        positiontemp = dscstr[x] - 65 ;
+        //printf("PV: %d\n", positiontemp);
+            for(int y = 0; positiontemp != (dsckeystr[y] - 65); y++ )
+            {
+                alphatemp = alphatemp + 1;
+                //printf("AT: %d\n", alphatemp);
+            }
+            dscestr[x] = alphabetstr[alphatemp];
+            alphatemp = 0;
+            
+            
+        
+        
+        
+            
         }
     }
 
