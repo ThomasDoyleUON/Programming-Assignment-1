@@ -39,7 +39,7 @@ int main()
     
     //Weird void here during excution of code user has to input charaters to move on.
     //Assuming it is here due to removing newline above but that is necessary for switch menu to work.
-    //Charaters or numbers do not affect code.
+    //Added code on line 34 to fix this by making user input character.
     
     
     switch(choice) // Switch Case For Menu Selection
@@ -108,7 +108,7 @@ char ccencrypt(char* str, int key)
 
     char ccestr[100]; //Initalises string for encrypted string to end up in.
     int ccestrsize = strlen(str); //Initalises varible for length of string
-    for(int i = 0; (i < ccestrsize); i++)
+    for(int i = 0; (i < ccestrsize); i++) //Moves through string until it reach the end by looking at length of string
         {      
         if (str[i] == ' ')
         {
@@ -131,7 +131,7 @@ char ccencrypt(char* str, int key)
         char ccunstr[100]; //Initalises Caesar Cipher Decrypted String
         int ccdstrsize = strlen(str); //Initalises varible for length of string
         
-        for(int i = 0; i < (ccdstrsize); ++i)
+        for(int i = 0; i < (ccdstrsize); ++i) //Moves through string until it reach the end by looking at length of string
             { //Runs through string until it reaches end of string     
             if (str[i] == ' ') // Checks if character is a space
             {
@@ -158,7 +158,7 @@ char ccencrypt(char* str, int key)
     int escstrsize = strlen(str); // Gets string size of inital string.
     
    
-    for(int x = 0; x < (escstrsize); x++)
+    for(int x = 0; x < (escstrsize); x++) //Moves through string until it reach the end by looking at length of string
     { 
     if (str[x] == ' ') // Checks if character is a space
         {
@@ -189,7 +189,7 @@ char ccencrypt(char* str, int key)
  
 
     
-    for(int x = -1; x < (dscstrsize); x++) // Runs through intial string until end
+    for(int x = -1; x < (dscstrsize); x++) //Moves through string until it reach the end by looking at length of string. -1 fixes weird issue with how the string is looked at.
     {
     if (str[x] == ' ') // Checks if character is a space
         {
