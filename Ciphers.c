@@ -1,3 +1,11 @@
+//The program allows for a Ceaser Cipher decryption and encryption as well as a subsitution cipher
+//encryption and decryption.
+
+
+//Program Operation
+//Program once an operation is complete must be reset to run another operations
+//if the menu selection gives and error the program must also be reset.
+
 
 #include<stdio.h>
 #include<string.h>
@@ -17,13 +25,15 @@ int main()
     //If something breaks values can be manually set underneath
     int key; //Key for ceaser cipher
     char str[100]; //Inital string for all ciphers
-    int choice; //Choice for switch case
+    int choice; //Choice for switch case 0 = Encrypt Ceaser 1 = Decrypt Ceaser 2 = Encrypt Subsitution 3 = Decrypt Subsitution
     char keystr[100]; //Key for subsititution cipher
     
     printf("~~Ceaser Cipher~~\n 0 = Encrypt\n 1 = Decrypt\n");
     printf("~~Subsitution Cipher~~\n 2 = Encrypt\n 3 = Decrypt\n");
     printf("Enter Choice For Processing: ");
-    scanf("%d", &choice);
+    
+    scanf("%d %*[^\n]%*c", &choice);
+    fflush(stdin);
 
     
     
@@ -35,9 +45,9 @@ int main()
         {
         printf("Choosen Ceaser Cipher Encrypt\n");
         printf("Enter String: ");
-        scanf("%s\n", str);
+        fgets (str, 50, stdin);
         printf("Enter Key: ");
-        scanf("%d/n", &key);
+        scanf(" %d/n", &key);
         ccencrypt(str, key);
         printf("\n");
         break;
@@ -46,7 +56,7 @@ int main()
         {
         printf("Choosen Ceaser Cipher Decrypt\n");
         printf("Enter String: ");
-        scanf("%s", str);
+        fgets (str, 100, stdin);
         printf("Enter Key: ");
         scanf("%d/n", &key);
         ccdecrypt(str, key);
@@ -58,9 +68,10 @@ int main()
         {
         printf("Choosen Subsitution Cipher Encrypt\n");
         printf("Enter String: ");
-        scanf("%s", str);
+        fgets (str, 100, stdin);
+        fflush(stdin);
         printf("Enter Key String: ");
-        scanf("%s/n", keystr);
+        fgets (keystr, 100, stdin);
         scencrypt(str, keystr);
         printf("\n");
         break;
@@ -69,9 +80,9 @@ int main()
         {
         printf("Choosen Subsitution Cipher Decrypt\n");
         printf("Enter String: ");
-        scanf("%s", str);
+        fgets (str, 100, stdin);
         printf("Enter Key String: ");
-        scanf("%s/n", keystr);
+        fgets (keystr, 100, stdin);
         scdecrypt(str, keystr);
         printf("\n");
         break;
