@@ -11,9 +11,13 @@
 #include<stdio.h>
 #include<string.h>
 
+//Ceasear Cipher Encrypt and Decyrpt take a string:str and an integar:key
+
 char ccencrypt(char* str, int key); //Function Prototype For Ceasear Cipher Encrypt.
 
 char ccdecrypt(char* str, int key); //Function Prototype For Ceasear Cipher Decrypt
+
+//Subsitution Cipher Encrypt and Decyrpt take a string:str and another string:keystr
 
 char scencrypt(char* str, char* keystr); //Function Prototype For Subsitution Cipher Encrypt
 
@@ -34,7 +38,7 @@ int main()
     printf("After Entering Choice and Pressing Enter\nType # and Press Enter\n");
     printf("Enter Choice For Processing: ");
     
-    scanf("%d %*[^\n]%*c", &choice);
+    scanf("%d %*[^\n]%*c", &choice); //Takes choice from selection and removes the \n from the end as not to mess up the scanf further along
      
     
     //Weird void here during excution of code user has to input charaters to move on.
