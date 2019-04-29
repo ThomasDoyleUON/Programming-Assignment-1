@@ -6,6 +6,7 @@
 //Program once an operation is complete must be reset to run another operations
 //if the menu selection gives and error the program must also be reset.
 
+//Sometimes weird characters appear at end of result seems to be no way to remedy
 
 #include<stdio.h>
 #include<string.h>
@@ -30,13 +31,15 @@ int main()
     
     printf("~~Ceaser Cipher~~\n 0 = Encrypt\n 1 = Decrypt\n");
     printf("~~Subsitution Cipher~~\n 2 = Encrypt\n 3 = Decrypt\n");
+    printf("After Entering Choice and Pressing Enter\nType # and Press Enter\n");
     printf("Enter Choice For Processing: ");
     
     scanf("%d %*[^\n]%*c", &choice);
-    fflush(stdin);
-
+     
     
-    
+    //Weird void here during excution of code user has to input charaters to move on.
+    //Assuming it is here due to removing newline above but that is necessary for switch menu to work.
+    //Charaters or numbers do not affect code.
     
     
     switch(choice) // Switch Case For Menu Selection
